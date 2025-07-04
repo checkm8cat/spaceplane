@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://qc84tbtx100j"]
+[gd_scene load_steps=3 format=3 uid="uid://qc84tbtx100j"]
 
 [ext_resource type="PackedScene" uid="uid://c0h7aehh3sj45" path="res://player.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://c0j738cucbee" path="res://powercell.tscn" id="2_e2o6t"]
 
 [node name="game" type="Node2D"]
 
@@ -10,3 +11,6 @@ position = Vector2(229, 104)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(229, 104)
 scale = Vector2(-1.72464, -1.16185)
+
+[node name="Powercell" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(76, 43)
