@@ -19,3 +19,8 @@ texture = SubResource("CanvasTexture_sh265")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_4flbx")
+
+[node name="Move_timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="timeout" from="Move_timer" to="." method="_on_timer_timeout"]
