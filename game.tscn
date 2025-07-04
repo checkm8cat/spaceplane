@@ -14,3 +14,6 @@ scale = Vector2(-1.72464, -1.16185)
 
 [node name="Powercell" parent="." instance=ExtResource("2_e2o6t")]
 position = Vector2(76, 43)
+
+[node name="Powercell2" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(308, 135)
