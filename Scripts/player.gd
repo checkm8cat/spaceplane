@@ -10,7 +10,6 @@ var game_started = false
 @export var speed = 200
 
 func get_input():
-	print("oranges")
 	if can_move:
 		if Input.is_action_just_pressed("Down"):
 			move_direction = down
