@@ -5,9 +5,9 @@
 [sub_resource type="CanvasTexture" id="CanvasTexture_sh265"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
-size = Vector2(105, 20)
+size = Vector2(102.42, 16.3934)
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(0.396667, 2.44)
 script = ExtResource("1_4flbx")
 
@@ -17,7 +17,8 @@ scale = Vector2(102, 16)
 texture = SubResource("CanvasTexture_sh265")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(0.789938, -1.07484e-06)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_4flbx")
 
 [node name="Move_timer" type="Timer" parent="."]
