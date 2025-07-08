@@ -8,6 +8,7 @@
 size = Vector2(18, 32)
 
 [node name="Powercell" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_pancg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
