@@ -8,6 +8,7 @@
 size = Vector2(102.42, 16.3934)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(2, -1)
 scale = Vector2(0.396667, 2.44)
 collision_layer = 3
 collision_mask = 3
