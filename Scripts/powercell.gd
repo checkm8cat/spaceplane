@@ -18,4 +18,3 @@ func _on_body_entered(body: Node2D) -> void:
 	Engine.time_scale *= 1.2
 	print("time is now ", Engine.time_scale)
 	respawn()
-	print("im hit!")

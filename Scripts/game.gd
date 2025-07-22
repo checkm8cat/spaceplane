@@ -5,7 +5,6 @@ extends Node2D
 
 func death():
 	if(player.health <= 0):
-		print(player.health)
 		Engine.time_scale = 1 
 		get_tree().reload_current_scene()
 
