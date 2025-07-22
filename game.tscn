@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://qc84tbtx100j"]
+[gd_scene load_steps=6 format=3 uid="uid://qc84tbtx100j"]
 
 [ext_resource type="PackedScene" uid="uid://c0h7aehh3sj45" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ch1i05hgxntuk" path="res://Scripts/game.gd" id="1_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://c0j738cucbee" path="res://powercell.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://pd0i6sgp3ptn" path="res://enemy_basic.tscn" id="3_feb5d"]
+[ext_resource type="Script" uid="uid://dgtslimvs2huw" path="res://Scripts/hud.gd" id="5_7jktm"]
 
 [node name="game" type="Node2D"]
 position = Vector2(-229, -105)
@@ -20,10 +21,30 @@ scale = Vector2(-1.72464, -1.16185)
 position = Vector2(283, 99)
 
 [node name="Enemy basic" parent="." instance=ExtResource("3_feb5d")]
-position = Vector2(337, 49)
+position = Vector2(756, -157)
 
 [node name="Enemy basic2" parent="." instance=ExtResource("3_feb5d")]
 position = Vector2(-106, 242)
 
 [node name="Enemy basic3" parent="." instance=ExtResource("3_feb5d")]
 position = Vector2(601, 278)
+
+[node name="Hud" type="Node" parent="."]
+script = ExtResource("5_7jktm")
+
+[node name="Health" type="Label" parent="Hud"]
+offset_left = -562.0
+offset_top = -316.0
+offset_right = -522.0
+offset_bottom = -293.0
+text = "3"
+vertical_alignment = 1
+
+[node name="display (skull)" type="Label" parent="Hud"]
+offset_left = 479.0
+offset_top = -312.0
+offset_right = 568.0
+offset_bottom = -289.0
+text = "nothing yet"
+
+[connection signal="update_health" from="player" to="." method="_on_player_update_health"]

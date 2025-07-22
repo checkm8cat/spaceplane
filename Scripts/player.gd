@@ -9,7 +9,7 @@ var move_direction : Vector2
 var can_move = true
 var game_started = false
 @export var speed = 200
-
+signal update_health
 
 
 func get_input():
@@ -44,3 +44,7 @@ func start_game():
 func _on_timer_timeout() -> void:
 	velocity = move_direction * speed
 	can_move = true 
+
+func take_damage(amount):
+	health -= amount
+	update_health.emit()

@@ -15,7 +15,7 @@ func _physics_process(delta):
 func _on_area_2d_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if(body.name.contains("Enemy")): return
 	print("haha touched you")
-	player.health -= 1
+	player.take_damage(1) 
 	print(player.health)
 	queue_free()
 	pass # Replace with function body.
