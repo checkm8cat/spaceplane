@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var health = 3
 var down = Vector2 (0, 1)
 var up = Vector2 (0, -1)
 var left = Vector2 (-1, 0)
@@ -8,6 +9,8 @@ var move_direction : Vector2
 var can_move = true
 var game_started = false
 @export var speed = 200
+
+
 
 func get_input():
 	if can_move:
