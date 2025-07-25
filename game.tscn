@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://qc84tbtx100j"]
+[gd_scene load_steps=7 format=3 uid="uid://qc84tbtx100j"]
 
 [ext_resource type="PackedScene" uid="uid://c0h7aehh3sj45" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://ch1i05hgxntuk" path="res://Scripts/game.gd" id="1_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://c0j738cucbee" path="res://powercell.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://pd0i6sgp3ptn" path="res://enemy_basic.tscn" id="3_feb5d"]
 [ext_resource type="Script" uid="uid://dgtslimvs2huw" path="res://Scripts/hud.gd" id="5_7jktm"]
+[ext_resource type="Script" uid="uid://b1kok423crcrj" path="res://game_over.gd" id="6_ryrav"]
 
 [node name="game" type="Node2D"]
 position = Vector2(-229, -105)
@@ -16,6 +17,7 @@ position = Vector2(229, 104)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(229, 104)
 scale = Vector2(-1.72464, -1.16185)
+script = ExtResource("5_7jktm")
 
 [node name="Powercell" parent="." instance=ExtResource("2_e2o6t")]
 position = Vector2(283, 99)
@@ -47,4 +49,25 @@ offset_right = 568.0
 offset_bottom = -289.0
 text = "nothing yet"
 
+[node name="Death" type="Label" parent="Hud"]
+visible = false
+modulate = Color(0.894118, 0, 0.47451, 1)
+self_modulate = Color(0.898233, 0, 0.208577, 1)
+visibility_layer = 31
+offset_left = -240.0
+offset_top = -101.0
+offset_right = 240.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 40
+text = "Game over
+(i forgot how to incresse size text)"
+horizontal_alignment = 1
+
+[node name="Game_over" type="Timer" parent="Hud"]
+wait_time = 0.5
+one_shot = true
+script = ExtResource("6_ryrav")
+
 [connection signal="update_health" from="player" to="." method="_on_player_update_health"]
+[connection signal="timeout" from="Hud/Game_over" to="." method="_on_game_over_timeout"]
+[connection signal="timeout" from="Hud/Game_over" to="Hud" method="_on_game_over_timeout"]

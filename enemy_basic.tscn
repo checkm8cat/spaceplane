@@ -31,7 +31,6 @@ shape = SubResource("RectangleShape2D_g2x43")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
-scale = Vector2(1, 1)
 shape = SubResource("CircleShape2D_20uc5")
 
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
