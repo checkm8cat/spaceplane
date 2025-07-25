@@ -4,20 +4,22 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_htbfs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mroyf"]
-size = Vector2(18, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_pancg"]
+radius = 16.2788
 
 [node name="Powercell" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_pancg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.00392157, 1, 0, 1)
 position = Vector2(4.76837e-07, 1.90735e-06)
+rotation = 0.371711
 scale = Vector2(15.516, 30.863)
 texture = SubResource("CanvasTexture_htbfs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_mroyf")
+shape = SubResource("CircleShape2D_pancg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="." to="CollisionShape2D" method="_on_powercell_body_entered"]

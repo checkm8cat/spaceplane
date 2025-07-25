@@ -35,19 +35,30 @@ position = Vector2(601, 278)
 script = ExtResource("5_7jktm")
 
 [node name="Health" type="Label" parent="Hud"]
+modulate = Color(0.227451, 1, 0, 1)
 offset_left = -562.0
 offset_top = -316.0
 offset_right = -522.0
 offset_bottom = -293.0
+theme_override_font_sizes/font_size = 32
 text = "3"
 vertical_alignment = 1
 
-[node name="display (skull)" type="Label" parent="Hud"]
-offset_left = 479.0
-offset_top = -312.0
-offset_right = 568.0
-offset_bottom = -289.0
-text = "nothing yet"
+[node name="Backgroundtext1" type="Label" parent="Hud"]
+offset_left = -485.0
+offset_top = -94.0
+offset_right = -94.0
+offset_bottom = -71.0
+rotation = -0.335778
+text = "background text to make the game feel less empty"
+
+[node name="Backgroundtext2" type="Label" parent="Hud"]
+offset_left = -23.0
+offset_top = 56.0
+offset_right = 368.0
+offset_bottom = 79.0
+rotation = 0.472048
+text = "dont forget to dodge the enemies"
 
 [node name="Death" type="Label" parent="Hud"]
 visible = false
