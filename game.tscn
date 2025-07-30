@@ -12,6 +12,7 @@
 
 [node name="game" type="Node2D"]
 process_mode = 3
+process_priority = 432432
 position = Vector2(-229, -105)
 script = ExtResource("1_fc0e3")
 
@@ -89,10 +90,11 @@ one_shot = true
 script = ExtResource("6_ryrav")
 
 [node name="Upgrades" parent="." instance=ExtResource("7_eow3j")]
-offset_left = 231.0
-offset_top = 20.0
-offset_right = 231.0
-offset_bottom = 20.0
+z_index = 4096
+offset_left = 229.0
+offset_top = -30.0
+offset_right = 229.0
+offset_bottom = -30.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
@@ -106,3 +108,4 @@ texture = SubResource("CanvasTexture_ryrav")
 [connection signal="upgrade_ready" from="Powercell" to="." method="_on_powercell_upgrade_ready"]
 [connection signal="timeout" from="Hud/Game_over" to="." method="_on_game_over_timeout"]
 [connection signal="timeout" from="Hud/Game_over" to="Hud" method="_on_game_over_timeout"]
+[connection signal="unpause_game" from="Upgrades" to="." method="_on_upgrades_unpause_game"]

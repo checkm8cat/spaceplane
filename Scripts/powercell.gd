@@ -3,6 +3,7 @@ extends Area2D
 var Height = 269
 var Width = 519
 var collected = 0 
+var score = 0
 signal upgrade_ready
 
 func respawn():
@@ -17,7 +18,10 @@ func respawn():
 
 func _on_body_entered(body: Node2D) -> void:
 	collected += 1
-	print(collected)
+	score += 1
+	print(score)
 	if(collected == 3):
+		collected = 0
 		upgrade_ready.emit()
+	
 	respawn()

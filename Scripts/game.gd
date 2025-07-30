@@ -9,6 +9,8 @@ extends Node2D
 func show_upgrade_visibility():
 		get_tree().paused = !get_tree().paused
 		$Upgrades.set_visible(true)
+		$Upgrades.Upgradetime()
+		
 
 
 
@@ -56,4 +58,14 @@ func pause():
 
 func _on_powercell_upgrade_ready() -> void:
 	show_upgrade_visibility()
+	
 	pass # Replace with function body.
+
+
+func _on_upgrades_unpause_game() -> void:
+	if ($Upgrades.Upgrade1 <= 5):
+		$player.speed *= 1.1
+	if ($Upgrades.Upgrade1 >= 5):
+		$player.health += 1
+		$Hud.update_health(player.health)
+	pause()
